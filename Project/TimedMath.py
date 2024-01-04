@@ -1,4 +1,5 @@
 import random
+import time
 
 OPERATORS = ["+", "-", "*"]
 MIN_OPERA = 3
@@ -14,9 +15,24 @@ def generateProb():
 
     expression = str(left) +  " " +operator + " " + str(right)
     answer = eval(expression)
-    print(f"{expression}\n{answer}")
     return expression, answer
 
+wrong = 0
+input("Press enter to start!!!")
+print("___________________________")
 
+startTime = time.time()
 for i in range(TOTAL_PROBLEMS):
-    
+    expression, answer = generateProb()
+    while True:
+        guess = input("Problem #" + str(i+1) + ": " + expression + " = ")
+        if guess == str(answer):
+            break
+        wrong = wrong + 1
+
+endTime = time.time()
+totalTime = endTime - startTime
+
+print("_____________________________")
+print(f"Good Job! You finished in {format(totalTime, '.2f')} seconds")
+
