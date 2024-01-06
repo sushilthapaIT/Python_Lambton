@@ -10,4 +10,7 @@ def mul():
     for i in range(1, upto + 1):
         print(f"{start} * {i} = {start * i}")
 
+while True:
+    userInp = "y"
+    userInp = input(" ")
 mul()

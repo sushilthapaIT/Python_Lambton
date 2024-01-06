@@ -8,8 +8,9 @@ pick = random.choice(ran)
 user = input("Enter your choice from [a,b,c,d,e]:\n").lower()
 while user not in ran:
     user = input("Invalid Input!! Enter your choice from [a,b,c,d,e]:\n").lower()
-    if user in ran:
-        print("Wow, you guessed!!")
-    else:
-        print("Oops, try again.")
+    
+if user in ran:
+    print("Wow, you guessed!!")
+else:
+    print("Oops, try again.")
 
